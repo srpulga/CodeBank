@@ -5,6 +5,11 @@ import (
 	"time"
 )
 
+type TransactionRepository interface {
+	SaveTransaction(transaction Transaction, creditCard CreditCard) error
+	GetCreditCard(creditCard CreditCard) (CreditCard, error) // One function can return more than one value
+}
+
 type Transaction struct {
 	ID           string
 	Amount       float64
