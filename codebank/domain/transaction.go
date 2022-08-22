@@ -8,6 +8,7 @@ import (
 type TransactionRepository interface {
 	SaveTransaction(transaction Transaction, creditCard CreditCard) error
 	GetCreditCard(creditCard CreditCard) (CreditCard, error) // One function can return more than one value
+	CreateCreditCard(creditCard CreditCard) error
 }
 
 type Transaction struct {
